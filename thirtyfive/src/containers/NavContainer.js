@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SearchForm from '../components/SearchForm'
 import Title from '../components/Title'
 import MovieResult from '../components/MovieResult'
+import SearchResultsContainer from './SearchResultsContainer'
 
 
 class NavContainer extends Component {
@@ -46,7 +47,7 @@ class NavContainer extends Component {
       <div>
         <Title />
         <SearchForm onChange={this.handleOnChange} onSubmit={this.handleOnSubmit} query={this.state.query}/>
-        {this.state.searchResults.length > 0 && this.renderResults()}
+        <SearchResultsContainer results={this.state.searchResults} render={this.renderResults} />
       </div>
     )
   }
