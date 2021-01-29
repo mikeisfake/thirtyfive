@@ -1,15 +1,33 @@
 import React, { Component } from 'react';
 import SearchForm from '../components/SearchForm'
 import Title from '../components/Title'
+import MovieResult from '../components/MovieResult'
 
 
 class NavContainer extends Component {
 
   state = {
     query:'',
+    searchResults: [],
   }
 
+  getResults = url => {
+    fetch(url)
+      .then(res => res.json())
+      .then(({ Search }) => {
+        this.setState({
+          searchResults: Search,
+          query: '',
+        })
+        console.log(this.state.searchResults)
+      })
+  }
 
+  renderResults = () => {
+    return (
+      <MovieResult movies={this.state.searchResults} />
+    )
+  }
 
   handleOnChange = event => {
     this.setState({
@@ -18,13 +36,9 @@ class NavContainer extends Component {
   }
 
   handleOnSubmit = event => {
-    const URL = `http://www.omdbapi.com/?s=${this.state.query}&apikey=2cedcff3&`
+    const URL = `http://www.omdbapi.com/?s=${this.state.query}&apikey=${process.env.REACT_APP_API_KEY}`
     event.preventDefault()
-    console.log(this.state.query)
-
-    fetch(URL)
-      .then(res => res.json())
-      .then(data => console.log(data))
+    this.getResults(URL)
   }
 
   render() {
@@ -32,6 +46,7 @@ class NavContainer extends Component {
       <div>
         <Title />
         <SearchForm onChange={this.handleOnChange} onSubmit={this.handleOnSubmit} query={this.state.query}/>
+        {this.state.searchResults.length > 0 && this.renderResults()}
       </div>
     )
   }
