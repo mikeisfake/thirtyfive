@@ -1,55 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import SearchForm from '../components/SearchForm'
-import Title from '../components/Title'
-import MovieResult from '../components/MovieResult'
-import SearchResultsContainer from './SearchResultsContainer'
+import { useDispatch } from 'react-redux'
+import { getResults } from '../redux/actions/getResults'
 
 
-class NavContainer extends Component {
+const NavContainer = () => {
 
-  state = {
-    query:'',
-    searchResults: [],
+  const dispatch = useDispatch();
+
+  const [query, setQuery] = useState('')
+
+  const handleOnChange = event => {
+    setQuery(event.target.value)
   }
 
-  getResults = url => {
-    fetch(url)
-      .then(res => res.json())
-      .then(({ Search }) => {
-        this.setState({
-          searchResults: Search,
-          query: '',
-        })
-        console.log(this.state.searchResults)
-      })
-  }
-
-  renderResults = () => {
-    return (
-      <MovieResult movies={this.state.searchResults} />
-    )
-  }
-
-  handleOnChange = event => {
-    this.setState({
-      query: event.target.value
-    })
-  }
-
-  handleOnSubmit = event => {
-    const URL = `http://www.omdbapi.com/?s=${this.state.query}&apikey=${process.env.REACT_APP_API_KEY}`
+  const handleOnSubmit = event => {
     event.preventDefault()
-    this.getResults(URL)
+    dispatch(getResults(query))
+    setQuery('')
   }
 
-  render() {
     return(
-      <div>
-        <Title />
-        <SearchForm onChange={this.handleOnChange} onSubmit={this.handleOnSubmit} query={this.state.query}/>
-        <SearchResultsContainer results={this.state.searchResults} render={this.renderResults} />
-      </div>
+      <nav id="main-nav">
+        <SearchForm onChange={handleOnChange} onSubmit={handleOnSubmit} query={query}/>
+      </nav>
     )
-  }
 }
  export default NavContainer
