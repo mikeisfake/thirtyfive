@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 import SearchForm from '../components/SearchForm'
 import { useDispatch } from 'react-redux'
 import { getResults } from '../redux/actions/getResults'
@@ -7,7 +8,6 @@ import { getResults } from '../redux/actions/getResults'
 const NavContainer = () => {
 
   const dispatch = useDispatch();
-
   const [query, setQuery] = useState('')
 
   const handleOnChange = event => {

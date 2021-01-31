@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-
+    find_or_save_movie params[:imdbid] if params[:imdbid]
   end
 
 end

@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inconsolata&family=Roboto:wght@100;400;700&display=swap');
+
+@import-normalize;
+
 :root {
-  --main-bg: #262626;
-  --card-bg: #2e2e2e;
+  --main-bg: #111111;
+  --card-bg: #1e1e1e;
   --accent: #5293ab;
+  --alert: #d1473d;
+  --text: #eeeeee;
+  --roboto: 'Roboto', sans-serif;
+  --alfa: 'Alfa Slab One', cursive;
+  --mono: 'Inconsolata', monospace;
 }
 
 html {
   background: var(--main-bg);
   font-size: 16px;
+  color: var(--text);
+  font-family: var(--roboto);
 }
 
 .flex {
@@ -24,7 +35,8 @@ html {
 
 .title {
   font-size: 3em;
-  font-family: sans-serif;
+  font-family: var(--alfa);
+  margin: 40px;
 }
 
 #main-nav {
@@ -33,14 +45,21 @@ html {
 }
 
 .s-input {
-  width: 50vw;
-  margin: 25px 0;
-  padding: 25px;
+  width: 300px;
+  margin: 25px auto;
+  padding: 10px 20px;
   border: none;
-  font-size: 2em;
-  text-transform: uppercase;
-  background: transparent;
-  font-family: monospace;
+  font-size: 1.3em;
+  background: var(--card-bg);
+  font-family: var(--mono);
+  color: var(--text);
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.s-input:focus {
+  outline: none;
+  border: 1px solid var(--accent);
 }
 
 .searchresults {
