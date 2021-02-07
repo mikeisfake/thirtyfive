@@ -3,21 +3,25 @@ import { useSelector } from 'react-redux'
 
 const MovieDetail = () => {
 
-  const movie = useSelector(state => state.movie)
+  const movie = useSelector(state => state.userMovie)
 
-  if (movie.length >= 0) {
-    return null
+  const renderDetails = () => {
+    return (
+      <div className="moviedetail flex flex-col">
+        <img src={movie.poster} alt={movie.title}/>
+        <h2>{movie.title}<span className="yeardetail"> ({movie.year})</span></h2>
+        <p>dir: {movie.director}</p><br />
+        <p>released: {movie.released}</p>
+        <p>{movie.genre}</p><br/>
+        <p className="plot">{movie.plot}</p>
+      </div>
+    )
   }
 
   return (
-      <div className="moviedetail">
-        <img src={movie.Poster} alt={movie.Title}/>
-        <h2>{movie.Title}</h2>
-        <p>dir: {movie.Director}</p><br />
-        <p>released: {movie.Released}</p>
-        <p>genre: {movie.Genre}</p><br/>
-        <p>{movie.Plot}</p>
-      </div>
+    <>
+      {renderDetails()}
+    </>
   )
 }
 

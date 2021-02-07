@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import MovieCard from '../components/MovieCard'
 import { createMovie } from '../redux/actions/createMovie'

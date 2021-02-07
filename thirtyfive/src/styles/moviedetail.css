@@ -1,0 +1,38 @@
+.moviedetail {
+  margin: 0 125px;
+  width: 450px;
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 1.05em
+}
+
+.moviedetail img {
+  height: auto;
+  width: 100%;
+}
+
+.moviedetail p {
+  line-height: 180%;
+}
+
+
+.moviedetail h2 {
+  font-size: 1.6em;
+  margin: 10px 0;
+  font-weight: 400;
+}
+
+.genres {
+  display: inline;
+}
+
+.reviewformcontainer {
+  align-items: center;
+}
+
+.reviewform {
+  background: var(--card-bg);
+  height: 100px;
+  width: 450px;
+}

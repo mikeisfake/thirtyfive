@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router';
-import SearchForm from '../components/SearchForm'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getResults } from '../redux/actions/getResults'
+import SearchForm from '../components/SearchForm'
+
 
 
 const NavContainer = () => {
@@ -21,9 +21,14 @@ const NavContainer = () => {
   }
 
     return(
-      <nav id="main-nav">
-        <SearchForm onChange={handleOnChange} onSubmit={handleOnSubmit} query={query}/>
-      </nav>
+      <div>
+        <nav id="main-nav" className="flex">
+          <SearchForm onChange={handleOnChange} onSubmit={handleOnSubmit} query={query}/>
+        </nav>
+        <div className="recent-movies">
+
+        </div>
+      </div>
     )
 }
  export default NavContainer
