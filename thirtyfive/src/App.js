@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './styles/index.css';
 import NavContainer from './containers/NavContainer'
 import Title from './components/Title'
 import SearchResultsContainer from './containers/SearchResultsContainer'

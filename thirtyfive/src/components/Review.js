@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Review = props => {
   return (
-    <div>{props.body}</div>
+    <div className="reviewitem">{props.body}</div>
   )
 }

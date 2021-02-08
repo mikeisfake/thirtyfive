@@ -26,10 +26,10 @@ const ReviewFormContainer = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
+    console.log(event.target.id)
     const movie_id = event.target.id
     const body = event.target.children[0].value
     dispatch(createReview(movie_id, body))
-    dispatch(getReviews(movie_id))
     setReview('')
   }
 
@@ -39,8 +39,10 @@ const ReviewFormContainer = () => {
       {userMovie.id != null &&
         <>
           <MovieDetail />
-          <ReviewForm  onChange={handleChange} onSubmit={handleSubmit} review={review} movie={userMovie}/>
-          <Reviews movie={userMovie} />
+          <div className="reviewdetail">
+            <ReviewForm  onChange={handleChange} onSubmit={handleSubmit} review={review} movie={userMovie}/>
+            <Reviews movie={userMovie} />
+          </div>
         </>
       }
     </div>

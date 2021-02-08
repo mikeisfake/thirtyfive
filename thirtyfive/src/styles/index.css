@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inconsolata&family=Roboto:wght@100;400;700&display=swap');
 
 @import-normalize;
+@import url('./reset.css');
 @import url('./moviedetail.css');
 @import url('./display.css');
+@import url('./review.css');
 
 :root {
   --main-bg: #111111;
@@ -10,6 +12,7 @@
   --accent: #5293ab;
   --alert: #d1473d;
   --text: #eeeeee;
+  --radius: 5px;
   --roboto: 'Roboto', sans-serif;
   --alfa: 'Alfa Slab One', cursive;
   --mono: 'Inconsolata', monospace;

@@ -1,6 +1,6 @@
 .moviedetail {
   margin: 0 125px;
-  width: 450px;
+  width: 350px;
   background: var(--card-bg);
   padding: 15px;
   border-radius: 5px;
@@ -24,15 +24,5 @@
 }
 
 .genres {
-  display: inline;
-}
-
-.reviewformcontainer {
-  align-items: center;
-}
-
-.reviewform {
-  background: var(--card-bg);
-  height: 100px;
-  width: 450px;
+  display: inline-block;
 }

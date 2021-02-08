@@ -9,7 +9,6 @@ const Reviews = props => {
   const reviews = useSelector(state => state.currentReviews)
 
   const renderReviews = () => {
-    console.log(reviews)
     return reviews.map(review => <Review body={review.body} />)
   }
 

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import RandomMovie from '../components/RandomMovie'
 import { getRandoms } from '../redux/actions/getRandoms'
-import { createMovie } from '../redux/actions/createMovie'
+import { setMovie } from '../redux/actions/setMovie'
 import { Link } from 'react-router-dom'
 
 
@@ -21,7 +21,7 @@ const RandomMovieContainer = props => {
         <Link to='/review'>
           <RandomMovie
             poster={movie.poster}
-            id={movie.idmdbid}
+            id={movie.id}
             title={movie.title}
             year={movie.year}
             plot={movie.plot}
@@ -33,8 +33,8 @@ const RandomMovieContainer = props => {
   }
 
   const handleClick = event => {
-    console.log(event.target)
-    dispatch(createMovie(event.target.id));
+    console.log(event.target.id)
+    dispatch(setMovie(event.target.id));
   }
 
   return (

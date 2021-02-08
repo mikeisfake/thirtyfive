@@ -1,0 +1,20 @@
+.reviewformcontainer {
+  align-items: center;
+}
+
+.reviews {
+  max-height: 800px;
+}
+
+.reviewitem {
+  background: var(--card-bg);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: var(--radius)
+}
+
+.reviewform {
+  background: green;
+  padding: 20px;
+  width: 450px;
+}
