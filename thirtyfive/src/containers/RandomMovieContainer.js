@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import RandomMovie from '../components/RandomMovie'
 import { getRandoms } from '../redux/actions/getRandoms'
-import { setMovie } from '../redux/actions/setMovie'
+import { setMovieFromDB } from '../redux/actions/setMovieFromDB'
 import { Link } from 'react-router-dom'
 
 
@@ -33,8 +33,9 @@ const RandomMovieContainer = props => {
   }
 
   const handleClick = event => {
-    console.log(event.target.id)
-    dispatch(setMovie(event.target.id));
+    dispatch(setMovieFromDB(event.target.id));
+    window.scrollTo(0,0)
+    dispatch(getRandoms())
   }
 
   return (

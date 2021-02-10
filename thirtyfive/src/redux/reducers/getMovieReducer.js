@@ -5,7 +5,7 @@ const getMovieReducer = (state = initialState, action) => {
     case 'SAVE_MOVIE':
       return state = action.payload || {};
     case 'SET_FROM_DB':
-      return state = action.payload;
+      return state = action.payload || {};
     default:
       return state;
   }

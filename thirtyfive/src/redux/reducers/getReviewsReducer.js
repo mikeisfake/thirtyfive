@@ -6,6 +6,8 @@ const getReviewsReducer = (state = initialState, action) => {
       return state = action.payload || [];
     case 'SAVE_REVIEW':
       return state = action.payload || [];
+    case 'DELETE_REVIEW':
+      return state = action.payload || [];
     default:
       return state;
   }

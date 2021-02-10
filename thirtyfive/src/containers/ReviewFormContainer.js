@@ -15,10 +15,6 @@ const ReviewFormContainer = () => {
   const dispatch = useDispatch()
   const [review, setReview] = useState('')
 
-  useEffect(() => {
-    dispatch(persistMovie(movie))
-  },[movie])
-
 
   const handleChange = event => {
     setReview(event.target.value)

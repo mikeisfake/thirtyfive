@@ -2,7 +2,7 @@ const initialState = {}
 
 const createMovieReducer = (state = initialState, action) => {
   switch(action.type) {
-    case 'SET_MOVIE':
+    case 'SET_FROM_API':
       return state = action.payload;
     case 'GET_RESULTS':
       return state;

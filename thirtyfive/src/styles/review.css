@@ -10,11 +10,41 @@
   background: var(--card-bg);
   padding: 15px;
   margin: 10px 0;
+  width: 420px;
+  max-height: 100px;
+  overflow: scroll;
   border-radius: var(--radius)
 }
 
 .reviewform {
-  background: green;
-  padding: 20px;
   width: 450px;
+  margin: 10px 0;
+}
+
+.reviewform textarea {
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: var(--radius);
+  outline-radius: var(--radius);
+  font-size: 1.2em;
+  border: none;
+}
+
+.reviewform textarea:focus {
+  outline: 1px solid var(--accent);
+}
+
+.reviewform input[type='submit'] {
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 8px;
+  border: none;
+  border-radius: var(--radius);
+}
+
+.reviewform input[type='submit']:hover {
+  color: var(--accent)
+}
+.reviewform input[type='submit']:focus {
+  outline: 1px solid var(--accent);
 }

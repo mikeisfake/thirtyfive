@@ -9,7 +9,7 @@ const Reviews = props => {
   const reviews = useSelector(state => state.currentReviews)
 
   const renderReviews = () => {
-    return reviews.map(review => <Review body={review.body} />)
+    return reviews.map(review => <Review body={review.body} id={review.id}/>)
   }
 
   useEffect(() => {
