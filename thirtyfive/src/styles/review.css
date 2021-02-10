@@ -48,3 +48,19 @@
 .reviewform input[type='submit']:focus {
   outline: 1px solid var(--accent);
 }
+
+.deletebtn {
+  background: var(--main-bg);
+  border: none;
+  padding: 10px;
+  position: absolute;
+  border-radius: var(--radius);
+  color: var(--text);
+  margin-left: 395px;
+  margin-top: -25px;
+  display: inline;
+}
+
+.deletebtn:hover {
+  color: var(--alert);
+}

@@ -10,7 +10,6 @@ const SearchResultsContainer = () => {
   const results = useSelector(state => state.results)
   const movie = useSelector(state => state.movie)
   const dispatch = useDispatch()
-  const [selectedMovie, setSelectedMovie] = useState({})
 
 
   const renderResults = results => {
@@ -36,6 +35,7 @@ const SearchResultsContainer = () => {
     return fetch(URL)
       .then(res => res.json())
       .then(data => dispatch(persistMovie(data)))
+
   }
 
 

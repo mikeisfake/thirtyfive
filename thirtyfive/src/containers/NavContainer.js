@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { getResults } from '../redux/actions/getResults'
+import SearchResultsContainer from './SearchResultsContainer'
 import SearchForm from '../components/SearchForm'
 
 
@@ -25,9 +26,7 @@ const NavContainer = () => {
         <nav id="main-nav" className="flex">
           <SearchForm onChange={handleOnChange} onSubmit={handleOnSubmit} query={query}/>
         </nav>
-        <div className="recent-movies">
-
-        </div>
+        <SearchResultsContainer />
       </div>
     )
 }
