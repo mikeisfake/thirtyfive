@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Menu } from './Menu'
 
 const Title = props => {
   return (
-    <Link to='/'>
-      <h1 className="title">THIRTYFIVE</h1>
-    </Link>
+    <div className="titlebar flex">
+      <Link to='/'>
+        <h1 className="title">THIRTY<span>FIVE</span></h1>
+      </Link>
+      <Menu />
+    </div>
       )
 };
 export default Title

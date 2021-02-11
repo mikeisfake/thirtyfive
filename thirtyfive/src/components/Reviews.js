@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {getReviews} from '../redux/actions/getReviews'
 import { Review } from './Review'
+import { Fade } from "react-awesome-reveal";
 
 const Reviews = props => {
 
@@ -17,7 +18,9 @@ const Reviews = props => {
   },[props.movie])
 
   return (
-    <div className="reviews">{renderReviews()}</div>
+      <div className="reviews">
+        {renderReviews()}
+      </div>
   )
 }
 export default Reviews

@@ -4,6 +4,7 @@ import RandomMovie from '../components/RandomMovie'
 import { getRandoms } from '../redux/actions/getRandoms'
 import { setMovieFromDB } from '../redux/actions/setMovieFromDB'
 import { Link } from 'react-router-dom'
+import { Fade } from "react-awesome-reveal";
 
 
 const RandomMovieContainer = props => {
@@ -42,7 +43,9 @@ const RandomMovieContainer = props => {
     <>
       <div className="randoms flex">
         <h1>random movies</h1>
-        {renderRandoms()}
+        <Fade cascade={true} damping={0.09}>
+          {renderRandoms()}
+        </Fade>
       </div>
     </>
   )

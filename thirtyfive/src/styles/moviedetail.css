@@ -1,15 +1,17 @@
 .moviedetail {
-  margin: 0 125px;
+  margin: 0 50px;
   width: 350px;
-  background: var(--card-bg);
-  padding: 15px;
-  border-radius: 5px;
-  font-size: 1.05em
+  font-size: 1.05em;
+  text-align: right;
+}
+
+.yeardetail {
+  font-size: .8em;
 }
 
 .moviedetail img {
   height: auto;
-  width: 100%;
+  width: 350px;
 }
 
 .moviedetail p {

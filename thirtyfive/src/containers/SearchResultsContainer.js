@@ -4,6 +4,7 @@ import MovieCard from '../components/MovieCard'
 import { setMovieFromAPI } from '../redux/actions/setMovieFromAPI'
 import { persistMovie } from '../redux/actions/persistMovie'
 import { Link } from 'react-router-dom'
+import { Fade } from "react-awesome-reveal";
 
 const SearchResultsContainer = () => {
 
@@ -16,13 +17,15 @@ const SearchResultsContainer = () => {
     return (
       results.map( movie => (
         <Link to='/review'>
-          <MovieCard
-            imdbid={movie.imdbID}
-            poster={movie.Poster}
-            title={movie.Title}
-            year={movie.Year}
-            save={setMovie}
-          />
+          <Fade>
+            <MovieCard
+              imdbid={movie.imdbID}
+              poster={movie.Poster}
+              title={movie.Title}
+              year={movie.Year}
+              save={setMovie}
+            />
+          </Fade>
         </Link>
       ))
     )
@@ -40,7 +43,7 @@ const SearchResultsContainer = () => {
 
 
     return(
-      <div className="searchresults flex flex-row">{results.length > 0 && renderResults(results)}</div>
+        <div className="searchresults flex flex-row">{results.length > 0 && renderResults(results)}</div>
     )
 }
 export default SearchResultsContainer

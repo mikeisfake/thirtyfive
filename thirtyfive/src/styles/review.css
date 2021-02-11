@@ -1,16 +1,18 @@
 .reviewformcontainer {
   align-items: center;
+  margin: 130px 0;
 }
 
 .reviews {
-  max-height: 800px;
+  width: 420px;
+  max-height: 500px;
 }
 
 .reviewitem {
   background: var(--card-bg);
   padding: 15px;
   margin: 10px 0;
-  width: 420px;
+  width: 380px;
   max-height: 100px;
   overflow: scroll;
   border-radius: var(--radius)
@@ -24,10 +26,16 @@
 .reviewform textarea {
   background: var(--card-bg);
   color: var(--text);
+  padding: 15px;
   border-radius: var(--radius);
   outline-radius: var(--radius);
   font-size: 1.2em;
   border: none;
+}
+
+.reviewform textarea::placeholder {
+  text-transform: lowercase;
+  font-size: .8em;
 }
 
 .reviewform textarea:focus {
@@ -50,14 +58,15 @@
 }
 
 .deletebtn {
-  background: var(--main-bg);
+  background: var(--card-bg);
   border: none;
   padding: 10px;
   position: absolute;
   border-radius: var(--radius);
   color: var(--text);
-  margin-left: 395px;
-  margin-top: -25px;
+  margin-top: 0;
+  margin-left: 405px;
+  margin-top: -30px;
   display: inline;
 }
 

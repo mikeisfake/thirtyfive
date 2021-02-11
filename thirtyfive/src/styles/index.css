@@ -10,6 +10,7 @@
   --main-bg: #111111;
   --card-bg: #1e1e1e;
   --accent: #5293ab;
+  --accent2: #ffba49;
   --alert: #d1473d;
   --text: #eeeeee;
   --radius: 5px;
@@ -37,13 +38,39 @@ img {
 }
 
 .title {
-  font-size: 3em;
+  font-size: 2.1em;
   font-family: var(--alfa);
-  margin: 40px;
+  transition: .3s ease;
+}
+
+.title span {
+  color: var(--accent2)
+}
+
+.title:hover {
+  transform: scale(1.1);
+}
+
+.titlebar {
+  position: fixed;
+  width: calc(100% - 150px);
+  background: var(--card-bg);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  padding-right: 100px;
+  top: 0;
+  z-index: 2;
+}
+
+.titlebar a {
+  font-size: 1.3em;
+  font-family: var(--mono)
 }
 
 #main-nav {
   margin: 0 auto;
+  margin-top: 120px;
 }
 
 .s-input {
@@ -75,6 +102,11 @@ img {
   margin: 10px;
   border-radius: 5px;
   background: var(--card-bg);
+  transition: 0.2s ease;
+}
+
+.moviecard:hover {
+  transform: scale(1.05);
 }
 
 .movieimg {
@@ -88,7 +120,7 @@ h1 {
 }
 
 .randoms {
-  width: 1120px;
+  width: 1700px;
   margin: 0 auto;
 }
 
@@ -100,6 +132,11 @@ h1 {
   background: var(--card-bg);
   margin: 10px;
   border-radius: 5px;
+  transition: 0.2s ease;
+}
+
+.randomcard:hover {
+  transform: scale(1.05);
 }
 
 .randominfo h2 {
@@ -113,4 +150,32 @@ h1 {
 }
 .randomimg {
   border-radius: 5px 0 0 5px !important;
+}
+
+.about {
+  background: var(--card-bg);
+  margin: 0 auto;
+  padding: 50px;
+  margin-top: 150px;
+  width: 500px;
+  border-radius: var(--radius)
+}
+
+.about p {
+  margin: 15px 0;
+  line-height: 1.4;
+}
+
+.about strong {
+  color: var(--accent);
+}
+
+.about a {
+  text-decoration: underline;
+}
+
+.about h2 {
+  font-family: var(--alfa);
+  font-size: 2em;
+  margin: 10px 0;
 }
