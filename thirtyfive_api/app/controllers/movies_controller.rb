@@ -2,7 +2,7 @@ require 'pry'
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.all.sample(6)
+    @movies = Movie.all.sample(9)
     render json: @movies
   end
 
