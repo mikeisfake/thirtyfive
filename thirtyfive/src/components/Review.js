@@ -11,7 +11,7 @@ export const Review = props => {
   const trash = <FontAwesomeIcon icon={faTrash} />
 
   const handleClick = event => {
-    console.log(event.target.id)
+    console.log(event.target)
     dispatch(deleteReview(event.target.id))
   }
 

@@ -11,8 +11,8 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.create(body: params[:body], movie_id: params[:movie_id])
     @movie = Movie.find_by(id: params[:movie_id])
-    @reviews = @movie.reviews.reverse
-    render json: @reviews
+    # @reviews = @movie.reviews.reverse
+    render json: @review
   end
 
   def destroy
